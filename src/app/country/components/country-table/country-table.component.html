@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Flag</th>
+        <th>Name</th>
+        <th>Population</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of countries; let i = index" class="animate__animated animate__slideInDown">
+        <td>{{i + 1}}</td>
+        <td>
+          <img class="small-flag" src="{{item.flag}}" alt="{{item.name}}">
+        </td>
+        <td>{{item.name}} - {{ item.capital }}</td>
+        <td>{{item.population | number}}</td>
+        <td>
+          <a [routerLink]="['/country', item.alpha2Code]">Ver....</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
